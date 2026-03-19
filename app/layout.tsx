@@ -18,7 +18,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
       <body
-        className="bg-background-light dark:bg-background-dark text-nordic-dark dark:text-white font-display antialiased selection:bg-mosque selection:text-white"
+        className="bg-background-light text-nordic-dark font-display antialiased selection:bg-mosque selection:text-white"
       >
         {children}
       </body>

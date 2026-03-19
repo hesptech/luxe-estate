@@ -6,7 +6,7 @@ export default function FeaturedCollections() {
     <section className="mb-16">
       <div className="flex items-end justify-between mb-8">
         <div>
-          <h2 className="text-2xl font-light text-nordic-dark dark:text-white">Featured Collections</h2>
+          <h2 className="text-2xl font-light text-nordic-dark">Featured Collections</h2>
           <p className="text-nordic-muted mt-1 text-sm">Curated properties for the discerning eye.</p>
         </div>
         <a className="hidden sm:flex items-center gap-1 text-sm font-medium text-mosque hover:opacity-70 transition-opacity" href="#">
