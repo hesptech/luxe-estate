@@ -15,6 +15,7 @@ export interface Property {
   type: "SALE" | "RENT";
   collection: string;
   created_at: string;
+  featured: boolean;
 }
 
 const PAGE_SIZE = 6;
@@ -45,7 +46,7 @@ export async function getFeaturedProperties(): Promise<Property[]> {
   const { data, error } = await supabase
     .from("properties")
     .select("*")
-    .eq("collection", "featured")
+    .eq("featured", true)
     .order("created_at", { ascending: true });
 
   if (error) {
