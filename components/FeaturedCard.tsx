@@ -1,10 +1,10 @@
-import { Property } from "../data/mockProperties";
+import { Property } from "../lib/properties";
 
 export default function FeaturedCard({ property }: { property: Property }) {
   return (
     <div className="group relative rounded-xl overflow-hidden shadow-soft bg-white cursor-pointer">
       <div className="aspect-[4/3] w-full overflow-hidden relative">
-        <img alt={property.imageAlt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={property.imageUrl} />
+        <img alt={property.image_alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={property.image_url} />
         {property.label && (
           <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-nordic-dark">
             {property.label}
@@ -33,7 +33,7 @@ export default function FeaturedCard({ property }: { property: Property }) {
             <span className="material-icons text-lg">bathtub</span> {property.baths} Baths
           </div>
           <div className="flex items-center gap-2 text-nordic-muted text-sm">
-            <span className="material-icons text-lg">square_foot</span> {property.areaSqM.toLocaleString()} m²
+            <span className="material-icons text-lg">square_foot</span> {property.area_sq_m.toLocaleString()} m²
           </div>
         </div>
       </div>

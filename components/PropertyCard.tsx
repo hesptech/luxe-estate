@@ -1,8 +1,8 @@
-import { Property } from "../data/mockProperties";
+import { Property } from "../lib/properties";
 
 interface PropertyCardProps {
   property: Property;
-  className?: string; // to allow responsive hidden classes like in html
+  className?: string;
 }
 
 export default function PropertyCard({ property, className = "" }: PropertyCardProps) {
@@ -10,7 +10,7 @@ export default function PropertyCard({ property, className = "" }: PropertyCardP
   return (
     <article className={`bg-white rounded-xl overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 group cursor-pointer h-full flex flex-col ${className}`}>
       <div className="relative aspect-[4/3] overflow-hidden">
-        <img alt={property.imageAlt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src={property.imageUrl} />
+        <img alt={property.image_alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src={property.image_url} />
         <button className="absolute top-3 right-3 p-2 bg-white/90 rounded-full hover:bg-mosque hover:text-white transition-colors text-nordic-dark">
           <span className="material-icons text-lg">favorite_border</span>
         </button>
@@ -35,7 +35,7 @@ export default function PropertyCard({ property, className = "" }: PropertyCardP
             <span className="material-icons text-sm text-mosque/80">bathtub</span> {property.baths}
           </div>
           <div className="flex items-center gap-1 text-nordic-muted text-xs">
-            <span className="material-icons text-sm text-mosque/80">square_foot</span> {property.areaSqM}m²
+            <span className="material-icons text-sm text-mosque/80">square_foot</span> {property.area_sq_m}m²
           </div>
         </div>
       </div>
