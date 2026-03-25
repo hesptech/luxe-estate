@@ -16,6 +16,17 @@ export interface Property {
   collection: string;
   created_at: string;
   featured: boolean;
+  // New fields
+  slug: string;
+  images: string[];
+  latitude?: number | null;
+  longitude?: number | null;
+  description?: string | null;
+  amenities?: string[];
+  garage?: number;
+  agent_name?: string | null;
+  agent_image_url?: string | null;
+  agent_title?: string | null;
 }
 
 const PAGE_SIZE = 6;
@@ -55,4 +66,32 @@ export async function getFeaturedProperties(): Promise<Property[]> {
   }
 
   return (data as Property[]) ?? [];
+}
+
+export async function getPropertyBySlug(slug: string): Promise<Property | null> {
+  const { data, error } = await supabase
+    .from("properties")
+    .select("*")
+    .eq("slug", slug)
+    .single();
+
+  if (error) {
+    console.error("Error fetching property by slug:", error.message);
+    return null;
+  }
+
+  return data as Property;
+}
+
+export async function getAllPropertySlugs(): Promise<string[]> {
+  const { data, error } = await supabase
+    .from("properties")
+    .select("slug");
+
+  if (error) {
+    console.error("Error fetching property slugs:", error.message);
+    return [];
+  }
+
+  return (data ?? []).map((p: { slug: string }) => p.slug).filter(Boolean);
 }
