@@ -4,15 +4,13 @@ import Link from "next/link";
 import { Property } from "../lib/properties";
 
 export default function FeaturedCard({ property }: { property: Property }) {
-  const primaryImage = (property.images && property.images.length > 0)
-    ? property.images[0]
-    : property.image_url;
+  const primaryImage = property.images[0];
 
   return (
     <Link href={`/properties/${property.slug}`} className="block">
       <div className="group relative rounded-xl overflow-hidden shadow-soft bg-white cursor-pointer">
         <div className="aspect-[4/3] w-full overflow-hidden relative">
-          <img alt={property.image_alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={primaryImage} />
+          <img alt={property.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={primaryImage} />
           {property.label && (
             <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-nordic-dark">
               {property.label}

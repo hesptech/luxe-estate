@@ -9,8 +9,6 @@ export interface Property {
   beds: number;
   baths: number;
   area_sq_m: number;
-  image_url: string;
-  image_alt: string;
   label?: string | null;
   type: "SALE" | "RENT";
   collection: string;

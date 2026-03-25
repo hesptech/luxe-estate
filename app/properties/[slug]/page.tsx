@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const property = await getPropertyBySlug(slug);
   if (!property) return { title: "Property not found — LuxeEstate" };
 
-  const primaryImage = property.images?.[0] ?? property.image_url;
+  const primaryImage = property.images[0];
 
   return {
     title: `${property.title} — ${property.location} | LuxeEstate`,
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${property.title} | LuxeEstate`,
       description: `${property.currency}${property.price.toLocaleString()} · ${property.beds} bed · ${property.baths} bath · ${property.location}`,
-      images: [{ url: primaryImage, width: 1200, height: 630, alt: property.image_alt }],
+      images: [{ url: primaryImage, width: 1200, height: 630, alt: property.title }],
     },
   };
 }
@@ -44,7 +44,7 @@ export default async function PropertyDetailsPage({ params }: PageProps) {
   if (!property) notFound();
 
   const isSale = property.type === "SALE";
-  const allImages = property.images?.length ? property.images : [property.image_url];
+  const allImages = property.images;
   const monthlyEstimate = isSale
     ? Math.round((property.price * 0.8) / 360)
     : property.price;
@@ -69,7 +69,7 @@ export default async function PropertyDetailsPage({ params }: PageProps) {
             {/* Main hero image */}
             <div className="relative aspect-[16/10] overflow-hidden rounded-xl shadow-sm group">
               <img
-                alt={property.image_alt}
+                alt={property.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 src={allImages[0]}
               />

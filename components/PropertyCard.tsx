@@ -10,15 +10,13 @@ interface PropertyCardProps {
 
 export default function PropertyCard({ property, className = "" }: PropertyCardProps) {
   const isSale = property.type === "SALE";
-  const primaryImage = (property.images && property.images.length > 0)
-    ? property.images[0]
-    : property.image_url;
+  const primaryImage = property.images[0];
 
   return (
     <Link href={`/properties/${property.slug}`} className="block h-full">
       <article className={`bg-white rounded-xl overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 group cursor-pointer h-full flex flex-col ${className}`}>
         <div className="relative aspect-[4/3] overflow-hidden">
-          <img alt={property.image_alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src={primaryImage} />
+          <img alt={property.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src={primaryImage} />
           <button
             className="absolute top-3 right-3 p-2 bg-white/90 rounded-full hover:bg-mosque hover:text-white transition-colors text-nordic-dark"
             onClick={(e) => e.preventDefault()}
