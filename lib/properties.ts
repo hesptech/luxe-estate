@@ -93,3 +93,65 @@ export async function getAllPropertySlugs(): Promise<string[]> {
 
   return (data ?? []).map((p: { slug: string }) => p.slug).filter(Boolean);
 }
+
+export interface SearchFilters {
+  query?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  type?: string;
+  beds?: number;
+  baths?: number;
+  amenities?: string[];
+}
+
+export async function searchProperties(
+  filters: SearchFilters,
+  page: number = 1,
+  pageSize: number = PAGE_SIZE
+): Promise<{ data: Property[]; count: number }> {
+  const from = (page - 1) * pageSize;
+  const to = from + pageSize - 1;
+
+  let queryBuilder = supabase
+    .from("properties")
+    .select("*", { count: "exact" });
+
+  if (filters.query) {
+    // Basic illike on title/location
+    // Supabase or allows combining ilikes
+    queryBuilder = queryBuilder.or(`title.ilike.%${filters.query}%,location.ilike.%${filters.query}%`);
+  }
+
+  if (filters.minPrice) {
+    queryBuilder = queryBuilder.gte("price", filters.minPrice);
+  }
+  if (filters.maxPrice) {
+    queryBuilder = queryBuilder.lte("price", filters.maxPrice);
+  }
+  
+  if (filters.type && filters.type !== "Any Type" && filters.type !== "All") {
+    queryBuilder = queryBuilder.eq("label", filters.type); // assuming 'label' holds property type based on UI
+  }
+
+  if (filters.beds && filters.beds > 0) {
+    queryBuilder = queryBuilder.gte("beds", filters.beds);
+  }
+  if (filters.baths && filters.baths > 0) {
+    queryBuilder = queryBuilder.gte("baths", filters.baths);
+  }
+
+  if (filters.amenities && filters.amenities.length > 0) {
+    queryBuilder = queryBuilder.contains("amenities", filters.amenities);
+  }
+
+  const { data, error, count } = await queryBuilder
+    .order("created_at", { ascending: false })
+    .range(from, to);
+
+  if (error) {
+    console.error("Error searching properties:", error.message);
+    return { data: [], count: 0 };
+  }
+
+  return { data: (data as Property[]) ?? [], count: count ?? 0 };
+}
