@@ -4,7 +4,14 @@ import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import SearchFiltersModal from "./SearchFiltersModal";
 
-export default function HeroSearch() {
+interface HeroSearchProps {
+  translations: {
+    searchPlaceholder: string;
+    searchButton: string;
+  };
+}
+
+export default function HeroSearch({ translations }: HeroSearchProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const currentQuery = searchParams.get("query") || "";
@@ -51,14 +58,14 @@ export default function HeroSearch() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="block w-full pl-12 pr-4 py-4 rounded-xl border-none bg-white text-nordic-dark shadow-soft placeholder-nordic-muted/60 focus:ring-2 focus:ring-mosque focus:bg-white transition-all text-lg" 
-          placeholder="Search by city, neighborhood, or address..." 
+          placeholder={translations.searchPlaceholder}
           type="text" 
         />
         <button 
           type="submit"
           className="absolute inset-y-2 right-2 px-6 bg-mosque hover:bg-mosque/90 text-white font-medium rounded-lg transition-colors flex items-center justify-center shadow-lg shadow-mosque/20"
         >
-          Search
+          {translations.searchButton}
         </button>
       </form>
 

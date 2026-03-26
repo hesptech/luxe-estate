@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "buy": "Kaufen",
+    "rent": "Mieten",
+    "sell": "Verkaufen",
+    "saved": "Gespeichert"
+  },
+  "hero": {
+    "title1": "Finde dein",
+    "title2": "Traumhaus",
+    "subtitle": "Entdecken Sie die hochwertigsten Immobilien an den besten Standorten weltweit.",
+    "searchPlaceholder": "Suche nach Standort, Viertel oder Stadt...",
+    "searchButton": "Suchen"
+  }
+}

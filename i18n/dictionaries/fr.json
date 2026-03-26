@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "buy": "Acheter",
+    "rent": "Louer",
+    "sell": "Vendre",
+    "saved": "Sauvegardés"
+  },
+  "hero": {
+    "title1": "Trouvez Votre",
+    "title2": "Maison de Rêve",
+    "subtitle": "Découvrez les propriétés immobilières les plus prestigieuses dans les meilleurs endroits du monde.",
+    "searchPlaceholder": "Rechercher par emplacement, quartier ou ville...",
+    "searchButton": "Rechercher"
+  }
+}

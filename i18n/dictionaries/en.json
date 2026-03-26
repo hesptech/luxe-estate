@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "buy": "Buy",
+    "rent": "Rent",
+    "sell": "Sell",
+    "saved": "Saved Homes"
+  },
+  "hero": {
+    "title1": "Find Your",
+    "title2": "Dream Home",
+    "subtitle": "Discover the most premium real estate properties in the best locations around the world.",
+    "searchPlaceholder": "Search by location, neighborhood, or city...",
+    "searchButton": "Search"
+  }
+}

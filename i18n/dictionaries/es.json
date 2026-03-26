@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "buy": "Comprar",
+    "rent": "Rentar",
+    "sell": "Vender",
+    "saved": "Guardados"
+  },
+  "hero": {
+    "title1": "Encuentra tu",
+    "title2": "Casa Ideal",
+    "subtitle": "Descubre las propiedades inmobiliarias más premium en las mejores ubicaciones de todo el mundo.",
+    "searchPlaceholder": "Buscar por ubicación, barrio o ciudad...",
+    "searchButton": "Buscar"
+  }
+}
