@@ -11,5 +11,35 @@
     "subtitle": "Entdecken Sie die hochwertigsten Immobilien an den besten Standorten weltweit.",
     "searchPlaceholder": "Suche nach Standort, Viertel oder Stadt...",
     "searchButton": "Suchen"
+  },
+  "featured": {
+    "title": "Ausgewählte Kollektionen",
+    "subtitle": "Ausgewählte Immobilien für das anspruchsvolle Auge.",
+    "viewAll": "Alle ansehen"
+  },
+  "newInMarket": {
+    "title": "Neu auf dem Markt",
+    "subtitle": "Neue Gelegenheiten, die diese Woche hinzugefügt wurden.",
+    "filters": {
+      "all": "Alle",
+      "buy": "Kaufen",
+      "rent": "Mieten"
+    },
+    "pagination": {
+      "previous": "Zurück",
+      "next": "Weiter",
+      "pageOf": "Seite {page} von {totalPages}"
+    }
+  },
+  "searchResults": {
+    "title": "Suchergebnisse",
+    "subtitle": "{count} Immobilien gefunden, die Ihren Kriterien entsprechen.",
+    "noProperties": "Keine Immobilien entsprechen Ihrer aktuellen Suche und Ihren Filtern.",
+    "adjustFilters": "Versuchen Sie, Ihre Filter oder Suchkriterien anzupassen.",
+    "pagination": {
+      "previous": "Zurück",
+      "next": "Weiter",
+      "pageOf": "Seite {page} von {totalPages}"
+    }
   }
 }

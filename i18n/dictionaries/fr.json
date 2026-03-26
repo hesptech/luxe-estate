@@ -11,5 +11,35 @@
     "subtitle": "Découvrez les propriétés immobilières les plus prestigieuses dans les meilleurs endroits du monde.",
     "searchPlaceholder": "Rechercher par emplacement, quartier ou ville...",
     "searchButton": "Rechercher"
+  },
+  "featured": {
+    "title": "Collections en Vedette",
+    "subtitle": "Des propriétés sélectionnées pour les plus exigeants.",
+    "viewAll": "Voir tout"
+  },
+  "newInMarket": {
+    "title": "Nouveautés sur le Marché",
+    "subtitle": "Nouvelles opportunités ajoutées cette semaine.",
+    "filters": {
+      "all": "Tout",
+      "buy": "Acheter",
+      "rent": "Louer"
+    },
+    "pagination": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "pageOf": "Page {page} sur {totalPages}"
+    }
+  },
+  "searchResults": {
+    "title": "Résultats de Recherche",
+    "subtitle": "{count} propriétés correspondant à vos critères trouvées.",
+    "noProperties": "Aucune propriété ne correspond à votre recherche et à vos filtres actuels.",
+    "adjustFilters": "Essayez d'ajuster vos filtres ou vos critères de recherche.",
+    "pagination": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "pageOf": "Page {page} sur {totalPages}"
+    }
   }
 }

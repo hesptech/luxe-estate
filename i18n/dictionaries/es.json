@@ -11,5 +11,35 @@
     "subtitle": "Descubre las propiedades inmobiliarias más premium en las mejores ubicaciones de todo el mundo.",
     "searchPlaceholder": "Buscar por ubicación, barrio o ciudad...",
     "searchButton": "Buscar"
+  },
+  "featured": {
+    "title": "Colecciones Destacadas",
+    "subtitle": "Propiedades seleccionadas para el ojo exigente.",
+    "viewAll": "Ver todas"
+  },
+  "newInMarket": {
+    "title": "Novedades en el Mercado",
+    "subtitle": "Nuevas oportunidades agregadas esta semana.",
+    "filters": {
+      "all": "Todo",
+      "buy": "Comprar",
+      "rent": "Rentar"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "pageOf": "Página {page} de {totalPages}"
+    }
+  },
+  "searchResults": {
+    "title": "Resultados de Búsqueda",
+    "subtitle": "Se encontraron {count} propiedades que coinciden con tus criterios.",
+    "noProperties": "No hay propiedades que coincidan con tu búsqueda y filtros actuales.",
+    "adjustFilters": "Intenta ajustar tus filtros o criterios de búsqueda.",
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "pageOf": "Página {page} de {totalPages}"
+    }
   }
 }

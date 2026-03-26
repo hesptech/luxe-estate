@@ -11,5 +11,35 @@
     "subtitle": "Discover the most premium real estate properties in the best locations around the world.",
     "searchPlaceholder": "Search by location, neighborhood, or city...",
     "searchButton": "Search"
+  },
+  "featured": {
+    "title": "Featured Collections",
+    "subtitle": "Curated properties for the discerning eye.",
+    "viewAll": "View all"
+  },
+  "newInMarket": {
+    "title": "New in Market",
+    "subtitle": "Fresh opportunities added this week.",
+    "filters": {
+      "all": "All",
+      "buy": "Buy",
+      "rent": "Rent"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "pageOf": "Page {page} of {totalPages}"
+    }
+  },
+  "searchResults": {
+    "title": "Search Results",
+    "subtitle": "Found {count} properties matching your criteria.",
+    "noProperties": "No properties match your current search and filters.",
+    "adjustFilters": "Try adjusting your filters or search criteria.",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "pageOf": "Page {page} of {totalPages}"
+    }
   }
 }
