@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from '@/components/Navbar'
 import { getProperties, getUsersWithRoles } from './actions'
 import PropertiesTable from './components/PropertiesTable'
 import UserRolesTable from './components/UserRolesTable'
@@ -24,8 +25,10 @@ export default async function AdminDashboardPage() {
   ])
 
   return (
-    <div className="min-h-screen bg-[#070b14] py-20 px-4 sm:px-6 lg:px-8 bg-[url('/img/grid-pattern.svg')] bg-opacity-20 z-0">
-      {/* Dynamic glow effect */}
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-[#070b14] py-20 px-4 sm:px-6 lg:px-8 bg-[url('/img/grid-pattern.svg')] bg-opacity-20 z-0">
+        {/* Dynamic glow effect */}
       <div className="fixed top-20 right-1/4 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[150px] -z-10 pointer-events-none mix-blend-screen" />
       <div className="fixed bottom-0 left-1/4 w-[600px] h-[600px] bg-emerald-600/20 rounded-full blur-[150px] -z-10 pointer-events-none mix-blend-screen" />
 
@@ -63,5 +66,6 @@ export default async function AdminDashboardPage() {
         </section>
       </main>
     </div>
+    </>
   )
 }

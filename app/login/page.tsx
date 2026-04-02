@@ -2,6 +2,7 @@
 
 import { createClient } from '@/utils/supabase/client';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function LoginPage() {
   const [loading, setLoading] = useState<string | null>(null);
@@ -33,9 +34,9 @@ export default function LoginPage() {
       
       <main className="w-full max-w-md z-10">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-14 h-14 bg-primary rounded-xl mb-6 shadow-soft text-white">
+          <Link href="/" className="inline-flex items-center justify-center w-14 h-14 bg-primary rounded-xl mb-6 shadow-soft text-white hover:bg-primary/90 transition-colors cursor-pointer">
             <span className="material-icons text-3xl">apartment</span>
-          </div>
+          </Link>
           <h1 className="text-3xl font-bold tracking-tight text-nordic dark:text-white mb-2">Welcome to LuxeEstate</h1>
           <p className="text-nordic/60 dark:text-gray-400">Unlock exclusive properties worldwide.</p>
         </div>

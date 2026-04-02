@@ -10,6 +10,18 @@ export default async function Navbar() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
+  let isAdmin = false;
+  if (user) {
+    const { data: roleData } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', user.id)
+      .single();
+    if (roleData?.role === 'admin') {
+      isAdmin = true;
+    }
+  }
+
   const cookieStore = await cookies();
   const locale = getLocaleFromCookie(cookieStore.get('NEXT_LOCALE')?.value);
   const dict = await getDictionary(locale);
@@ -29,6 +41,11 @@ export default async function Navbar() {
             <a className="text-nordic-dark/70 hover:text-nordic-dark font-medium text-sm hover:border-b-2 hover:border-nordic-dark/20 px-1 py-1 transition-all" href="#">{dict.navbar.rent}</a>
             <a className="text-nordic-dark/70 hover:text-nordic-dark font-medium text-sm hover:border-b-2 hover:border-nordic-dark/20 px-1 py-1 transition-all" href="#">{dict.navbar.sell}</a>
             <a className="text-nordic-dark/70 hover:text-nordic-dark font-medium text-sm hover:border-b-2 hover:border-nordic-dark/20 px-1 py-1 transition-all" href="#">{dict.navbar.saved}</a>
+            {isAdmin && (
+              <Link className="text-nordic-dark/70 hover:text-nordic-dark font-medium text-sm hover:border-b-2 hover:border-nordic-dark/20 px-1 py-1 transition-all" href="/admin">
+                Dashboard
+              </Link>
+            )}
           </div>
           <div className="flex items-center space-x-6">
             <LanguageSelector currentLang={locale} />
