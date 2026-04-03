@@ -5,6 +5,7 @@ import PropertiesTable from './components/PropertiesTable'
 import UserRolesTable from './components/UserRolesTable'
 import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Admin Dashboard | Luxe Estate',
@@ -58,9 +59,17 @@ export default async function AdminDashboardPage() {
               <span className="w-2 h-6 bg-emerald-500 rounded-sm inline-block"></span>
               Properties Overview
             </h2>
-            <span className="text-sm text-gray-400 bg-white/5 py-1 px-3 rounded-full border border-white/10">
-              Total: {properties?.length || 0}
-            </span>
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-gray-400 bg-white/5 py-1 px-3 rounded-full border border-white/10 hidden sm:inline-block">
+                Total: {properties?.length || 0}
+              </span>
+              <Link 
+                href="/admin/properties/new" 
+                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-medium transition-colors text-sm flex items-center gap-2 shadow-lg hover:shadow-emerald-500/20"
+              >
+                + Añadir Propiedad
+              </Link>
+            </div>
           </div>
           <PropertiesTable properties={properties || []} />
         </section>

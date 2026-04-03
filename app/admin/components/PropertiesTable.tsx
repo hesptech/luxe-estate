@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 
 type Property = {
   id: string
@@ -23,12 +24,13 @@ export default function PropertiesTable({ properties }: { properties: Property[]
             <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Type</th>
             <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Price</th>
             <th scope="col" className="px-6 py-4 font-semibold tracking-wider">Added</th>
+            <th scope="col" className="px-6 py-4 font-semibold tracking-wider text-right">Actions</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-white/10">
           {properties.length === 0 ? (
             <tr>
-              <td colSpan={5} className="px-6 py-8 text-center text-gray-500">
+              <td colSpan={6} className="px-6 py-8 text-center text-gray-500">
                 No properties found.
               </td>
             </tr>
@@ -47,6 +49,11 @@ export default function PropertiesTable({ properties }: { properties: Property[]
                 </td>
                 <td className="px-6 py-4 text-gray-400">
                   {new Date(property.created_at).toLocaleDateString()}
+                </td>
+                <td className="px-6 py-4 text-right">
+                  <Link href={`/admin/properties/${property.id}`} className="text-emerald-400 hover:text-emerald-300 font-medium transition-colors text-sm underline-offset-4 hover:underline">
+                    Edit
+                  </Link>
                 </td>
               </tr>
             ))
